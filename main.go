@@ -1,18 +1,29 @@
 package main
 
 import (
-	"TG_Bot/config"
+	"log"
+	"os"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
+	"github.com/joho/godotenv"
 )
 
 func main() {
-	bot, err := tgbotapi.NewBotAPI(config.API_TOKEN)
+	// Загрузка .env
+	if err := godotenv.Load(); err != nil {
+		log.Fatalf("Ошибка загрузки .env: %v", err)
+	}
+
+	// Инициализация бота
+	bot, err := tgbotapi.NewBotAPI(os.Getenv("TELEGRAM_APITOKEN"))
 	if err != nil {
 		panic(err)
 	}
 
-	bot.Debug = true
+	// Включаем debug
+	if os.Getenv("DEBUG") == "true" {
+		bot.Debug = true
+	}
 
 	// Создаем новую структуру UpdateConfig со смещением 0. Смещения используются
 	// чтобы Telegram знал, что мы обработали предыдущие значения и они нам
