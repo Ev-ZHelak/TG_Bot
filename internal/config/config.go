@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-// Структура для конфига (опционально)
+// Структура для конфига
 type Config struct {
 	Telegram struct {
 		Token     string  `yaml:"token"`
@@ -24,7 +24,7 @@ type Config struct {
 
 func LoadTgBotConfig() Config {
 	// Инициализация Viper
-	viper.SetConfigFile("./config.yaml") // Указываем полный путь
+	viper.SetConfigFile("./internal/config/config.yaml")
 	if err := viper.ReadInConfig(); err != nil {
 		log.Fatal("Ошибка загрузки yaml:", err)
 	}
@@ -32,10 +32,10 @@ func LoadTgBotConfig() Config {
 	var cfg Config
 
 	if err := viper.Unmarshal(&cfg); err != nil {
-		log.Fatalf("Ошибка парсинга конфига: %v", err)
+		log.Fatal("Ошибка парсинга конфига:", err)
 	}
 
-	fmt.Printf("Токен: %s\n", cfg.Telegram.Token)
-	fmt.Printf("Таймаут БД: %v\n", cfg.Database.Timeout)
+	fmt.Printf("Token: %s\n", cfg.Telegram.Token)
+	fmt.Printf("Timeout db: %v\n", cfg.Database.Timeout)
 	return cfg
 }

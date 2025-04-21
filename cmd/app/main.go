@@ -1,12 +1,13 @@
 package main
 
 import (
-	"TG_Bot/config"
+	"TG_Bot/internal/config"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
 func main() {
+	// Загрузка 
 	cfg := config.LoadTgBotConfig()
 	apiToken := cfg.Telegram.Token
 
