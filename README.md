@@ -2,5 +2,4 @@
 # TG_Bot
 Telegram бот на языке Golang
 #### Useful links:
-Viper — это комплексное решение для настройки приложений Go
-[](https://github.com/spf13/viper/tree/master)
+[Viper — reading from JSON, TOML, YAML, HCL, envfile and Java properties config files](https://github.com/spf13/viper/tree/master)
