@@ -2,6 +2,7 @@ package main
 
 import (
 	"TG_Bot/internal/config"
+	"fmt"
 	"log"
 	"time"
 
@@ -12,14 +13,17 @@ func main() {
 	// Загрузка конфигурации
 	cfg := config.LoadTgBotConfig()
 
+	// Инициализация бота
 	bot, err := tele.NewBot(tele.Settings{
-		Token:  cfg.Telegram.Token,
-		Poller: &tele.LongPoller{Timeout: 10 * time.Second},
+		Token:   cfg.Telegram.Token,
+		Verbose: cfg.Telegram.Debug,
+		Poller:  &tele.LongPoller{Timeout: 10 * time.Second},
 	})
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	bot.Use()
 	// Устанавливаем список команд
 	commands := []tele.Command{
 		{Text: "start", Description: "Начать работу с ботом"},
@@ -40,5 +44,6 @@ func main() {
 		return c.Send("Список команд:\n/start - Начать\n/help - Помощь\n/settings - Настройки")
 	})
 
+	fmt.Println("Start bot...")
 	bot.Start()
 }
