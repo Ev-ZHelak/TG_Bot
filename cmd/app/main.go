@@ -20,12 +20,24 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// Устанавливаем список команд
+	commands := []tele.Command{
+		{Text: "start", Description: "Начать работу с ботом"},
+		{Text: "help", Description: "Помощь и инструкции"},
+		{Text: "settings", Description: "Настройки профиля"},
+	}
+	err = bot.SetCommands(commands)
+	if err != nil {
+		log.Println("Ошибка установки команд:", err)
+	}
+
+	// Обработчики команд
 	bot.Handle("/start", func(c tele.Context) error {
-		return c.Send("Добро пожаловать!")
+		return c.Send("Добро пожаловать! Введите /help для списка команд.")
 	})
 
-	bot.Handle(tele.OnText, func(c tele.Context) error {
-		return c.Send("Вы сказали: " + c.Text())
+	bot.Handle("/help", func(c tele.Context) error {
+		return c.Send("Список команд:\n/start - Начать\n/help - Помощь\n/settings - Настройки")
 	})
 
 	bot.Start()

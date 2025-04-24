@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"log"
 	"time"
 
@@ -24,7 +23,7 @@ type Config struct {
 
 func LoadTgBotConfig() Config {
 	// Инициализация Viper
-	viper.SetConfigFile("./internal/config/config.yaml")
+	viper.SetConfigFile("./internal/config/app.yaml")
 	if err := viper.ReadInConfig(); err != nil {
 		log.Fatal("Ошибка загрузки yaml:", err)
 	}
@@ -35,7 +34,6 @@ func LoadTgBotConfig() Config {
 		log.Fatal("Ошибка парсинга конфига:", err)
 	}
 
-	fmt.Printf("Token: %s\n", cfg.Telegram.Token)
-	fmt.Printf("Timeout db: %v\n", cfg.Database.Timeout)
+	// fmt.Printf("Token: %s\n", cfg.Telegram.Token)
 	return cfg
 }
