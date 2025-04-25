@@ -13,35 +13,38 @@ TG_Bot
 │     └─ main.go
 ├─ go.mod
 ├─ go.sum
-└─ internal
-   ├─ bot
-   │  ├─ games
-   │  │  ├─ millionaire
-   │  │  │  ├─ engine
-   │  │  │  │  ├─ questions.go
-   │  │  │  │  └─ session.go
-   │  │  │  ├─ handlers
-   │  │  │  └─ keyboards
-   │  │  └─ registry.go
-   │  ├─ handlers
-   │  │  ├─ callbacks.go
-   │  │  ├─ commands.go
-   │  │  └─ messages.go
-   │  └─ keyboards
-   │     ├─ inline.go
-   │     └─ reply.go
-   ├─ config
-   │  ├─ config.go
-   │  └─ games
-   ├─ models
-   │  └─ user.go
-   ├─ services
-   │  ├─ auth
-   │  └─ notification
-   ├─ storage
-   │  └─ millionaire
-   │     └─ questions.json
-   └─ utils
-      └─ logger
+├─ internal
+│  ├─ bot
+│  │  ├─ games
+│  │  │  ├─ millionaire
+│  │  │  │  ├─ engine
+│  │  │  │  │  ├─ questions.go
+│  │  │  │  │  └─ session.go
+│  │  │  │  ├─ handlers
+│  │  │  │  └─ keyboards
+│  │  │  └─ registry.go
+│  │  ├─ handlers
+│  │  │  ├─ callbacks.go
+│  │  │  ├─ commands.go
+│  │  │  └─ messages.go
+│  │  └─ keyboards
+│  │     ├─ inline.go
+│  │     └─ reply.go
+│  ├─ config
+│  │  ├─ config.go
+│  │  └─ games
+│  ├─ models
+│  │  └─ user.go
+│  ├─ services
+│  │  ├─ auth
+│  │  └─ notification
+│  ├─ storage
+│  │  └─ millionaire
+│  │     └─ questions.json
+│  └─ utils
+│     └─ logger
+└─ scripts
+   └─ PSQL
+      └─ install_postgresql.sh
 
 ```
