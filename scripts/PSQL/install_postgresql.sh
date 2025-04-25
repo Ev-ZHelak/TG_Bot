@@ -4,6 +4,7 @@
 # Version: 1.2
 # Author: Eugene Zhelak
 
+# =================================================================================================
 # Что делает скрипт?
 
 # Этот скрипт автоматизирует установку и настройку PostgreSQL на Linux (например, Raspberry Pi). Он выполняет:
@@ -31,6 +32,7 @@
 # -nd или --db-name - имя основной БД (по умолчанию: app_db)
 # -ua или --admin-user - имя администратора БД (по умолчанию: admin)
 # -pa или --admin-password - пароль администратора (по умолчанию: password)
+
 # Пример с параметрами:
 
 # sudo ./install_postgres.sh --postgres-password "postgres" --db-name "app_db" --admin-user "admin" --admin-password "password"
