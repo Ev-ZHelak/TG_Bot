@@ -5,6 +5,7 @@ The project is under development . . .
 - [Viper reading from JSON, TOML, YAML, HCL, envfile and Java properties config files](https://github.com/spf13/viper/tree/master)
 
 #### Current project tree
+
 ```
 TG_Bot
 ├─ README.md
@@ -44,7 +45,7 @@ TG_Bot
 │  └─ utils
 │     └─ logger
 └─ scripts
-   └─ PSQL
-      └─ install_postgresql.sh
+   └─ psql
+      └─ install_psql.sh
 
 ```
