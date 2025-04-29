@@ -8,9 +8,10 @@ import (
 
 var (
 	commands = []tele.Command{
-		{Text: "start", Description: "Начать работу с ботом"},
-		{Text: "help", Description: "Помощь и инструкции"},
+		{Text: "start", Description: "Запустить бот"},
+		{Text: "games", Description: "Список игр"},
 		{Text: "settings", Description: "Настройки профиля"},
+		{Text: "help", Description: "Помощь и инструкции"},
 	}
 )
 

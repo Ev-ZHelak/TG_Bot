@@ -16,6 +16,7 @@ func MainHandlerMessages(b *tele.Bot) {
 			user.FirstName,
 			user.Username,
 		))
+		fmt.Println(user)
 		return nil
 	})
 }

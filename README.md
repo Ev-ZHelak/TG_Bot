@@ -12,11 +12,14 @@ TG_Bot
 ├─ cmd
 │  └─ app
 │     └─ main.go
+├─ config
+│  └─ config.go
 ├─ go.mod
 ├─ go.sum
 ├─ internal
 │  ├─ bot
 │  │  ├─ games
+│  │  │  ├─ config
 │  │  │  ├─ millionaire
 │  │  │  │  ├─ engine
 │  │  │  │  │  ├─ questions.go
@@ -28,20 +31,21 @@ TG_Bot
 │  │  │  ├─ callbacks.go
 │  │  │  ├─ commands.go
 │  │  │  └─ messages.go
-│  │  └─ keyboards
-│  │     ├─ inline.go
-│  │     └─ reply.go
-│  ├─ config
-│  │  ├─ config.go
-│  │  └─ games
+│  │  ├─ initbot.go
+│  │  ├─ keyboards
+│  │  │  ├─ inline.go
+│  │  │  └─ reply.go
+│  │  └─ menu
+│  │     └─ create.go
 │  ├─ models
 │  │  └─ user.go
+│  ├─ repository
+│  │  ├─ millionaire
+│  │  │  └─ questions.json
+│  │  └─ postgres
 │  ├─ services
 │  │  ├─ auth
 │  │  └─ notification
-│  ├─ storage
-│  │  └─ millionaire
-│  │     └─ questions.json
 │  └─ utils
 │     └─ logger
 └─ scripts
