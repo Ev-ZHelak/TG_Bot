@@ -18,6 +18,7 @@ TG_Bot
 ├─ go.sum
 ├─ internal
 │  ├─ bot
+│  │  ├─ bot.go
 │  │  ├─ games
 │  │  │  ├─ config
 │  │  │  ├─ millionaire
@@ -31,25 +32,32 @@ TG_Bot
 │  │  │  ├─ callbacks.go
 │  │  │  ├─ commands.go
 │  │  │  └─ messages.go
-│  │  ├─ initbot.go
 │  │  ├─ keyboards
 │  │  │  ├─ inline.go
 │  │  │  └─ reply.go
 │  │  └─ menu
 │  │     └─ create.go
+│  ├─ db
+│  │  ├─ pool.go
+│  │  └─ stats.go
 │  ├─ models
 │  │  └─ user.go
 │  ├─ repository
-│  │  ├─ millionaire
-│  │  │  └─ questions.json
-│  │  └─ postgres
+│  │  └─ millionaire
+│  │     └─ questions.json
 │  ├─ services
 │  │  ├─ auth
 │  │  └─ notification
+│  ├─ sql
+│  │  ├─ init
+│  │  │  └─ create_user_tables.sql
+│  │  └─ queries
 │  └─ utils
 │     └─ logger
-└─ scripts
-   └─ psql
-      └─ install_psql.sh
+├─ scripts
+│  └─ psql
+│     └─ install_psql.sh
+└─ test
+   └─ main.go
 
 ```
