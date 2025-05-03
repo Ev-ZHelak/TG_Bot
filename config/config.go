@@ -7,6 +7,10 @@ import (
 	"github.com/spf13/viper"
 )
 
+const (
+	confFile = "./config/config.yaml"
+)
+
 // Структура конфига
 type TelegramConfig struct {
 	Telegram struct {
@@ -31,6 +35,7 @@ type PostgreSQLConfig struct {
 			MinConns    int           `yaml:"minConns"`
 			MaxLifetime time.Duration `yaml:"maxLifetime"`
 			MaxIdleTime time.Duration `yaml:"maxIdleTime"`
+			HealthCheckPeriod time.Duration `yaml:"healthCheckPeriod"`
 		} `yaml:"connectionPool"`
 
 		Timeouts struct {
@@ -42,7 +47,7 @@ type PostgreSQLConfig struct {
 
 func LoadTelegramConfig() TelegramConfig {
 	// Инициализация Viper
-	viper.SetConfigFile("./config/telegram.yaml")
+	viper.SetConfigFile(confFile)
 	if err := viper.ReadInConfig(); err != nil {
 		log.Fatal("Ошибка загрузки yaml telegram:", err)
 	}
@@ -57,7 +62,7 @@ func LoadTelegramConfig() TelegramConfig {
 
 func LoadPostgresConfig() PostgreSQLConfig {
 	// Инициализация Viper
-	viper.SetConfigFile("./config/postgres.yaml")
+	viper.SetConfigFile(confFile)
 	if err := viper.ReadInConfig(); err != nil {
 		log.Fatal("Ошибка загрузки yaml postgres:", err)
 	}

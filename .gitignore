@@ -4,6 +4,7 @@
 .DS_Store
 *.yaml
 /.vscode
+/test
 # Binaries for programs and plugins
 *.exe
 *.exe~
