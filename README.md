@@ -6,6 +6,7 @@ The project is under development . . .
 
 #### Current project tree
 
+
 ```
 TG_Bot
 ├─ README.md
@@ -54,10 +55,8 @@ TG_Bot
 │  │  └─ queries
 │  └─ utils
 │     └─ logger
-├─ scripts
-│  └─ psql
-│     └─ install_psql.sh
-└─ test
-   └─ main.go
+└─ scripts
+   └─ psql
+      └─ install_psql.sh
 
 ```
